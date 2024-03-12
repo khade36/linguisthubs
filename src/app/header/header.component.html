@@ -1,0 +1,31 @@
+<div id="body">
+   <!--Top menu-->
+   <div class="menu">
+      <li id="logo-name"><a>LinguistHubs</a></li> 
+      <ul class="bar-header">
+          <li><a routerLink="">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <!-- <li><a>Reviews</a></li> -->
+          <!-- <li><a routerLink="/blog">Blog</a></li> -->
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/login" (click)="LogOut()">{{login}} ↪</a></li>
+      </ul>  
+   </div>
+   <!--Menu Options-->
+   <div class="bar-nav">
+      <ul class="bar-menu">
+         <li class="flag-menu"><img class="img-flag" src="assets/Flag_of_Russia.svg.png"><a routerLink="/russian" class="lang-name">Russian</a></li>
+         <li class="flag-menu"><img class="img-flag" src="/assets/Flag_of_France.svg.png"><a routerLink="/french"  class="lang-name">French</a></li>
+         <li class="flag-menu"><img class="img-flag" src="assets/Flag_of_Japan.svg.png"><a routerLink="/japanese"  class="lang-name">Japanese</a></li>
+         <li class="flag-menu"><img class="img-flag" src="assets/1200px-Flag_of_the_United_States.svg.png"><a routerLink="/english" class="lang-name">English</a></li>
+         <li class="flag-menu"><img class="img-flag" src="/assets/Flag_of_India.svg.png"><a routerLink="/hindi" class="lang-name">Hindi</a></li>
+      </ul> 
+   </div>
+   <div class="info-msg" *ngIf="isLoggedOutShow" >
+      <i class="fa fa-info-circle"></i>
+      We miss you 😔
+    </div> 
+   <!--msg bar and one advertisement-->      
+</div> 
+<!--msg bar and one advertisement--> 
+

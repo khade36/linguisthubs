@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div class="container">
+    <div class="c-1">
+      <div class="c_1-1">
+         <img class="img" src="/assets/Anastasiia.png">
+         <h2>Anastasiia</h2>
+        <button (click)="getDashBoard()">Dashboard</button>
+        <button (click)="getCourses()">Course</button>
+      </div>  
+    </div>
+    <div class="c-2"><!--*ngFor="let x of getArrayOfCourses"--> 
+        <div class="border-box" *ngIf="isVisiblieCourses">
+        <ul *ngFor="let x of getArrayOfCourses;let i = index">    
+          <li>{{x.courseTopicsList[i].topic_name}}</li>
+          <li><iframe width="150" height="150" [src]="sanitizeUrl(x.courseTopicsList[i].youtube_link)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li>     
+        </ul>
+        </div>
+
+        <div *ngIf="isVisibleDashboard">
+            <img src="/assets/03092022_rorozoa_10.png">
+        </div>
+    </div>      
+</div>         
+<app-footer></app-footer>

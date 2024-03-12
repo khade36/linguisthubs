@@ -1,0 +1,40 @@
+<app-header></app-header>
+<body>
+  <div class="container">
+      <div class="title-box">
+          <h1>Your shopping cart</h1>
+          <p>LinguistHubs</p>
+      </div>
+      <div class="product-box">
+          <div class="img-box">
+              <img src="/assets/favicon.png" alt="vacuum">
+          </div>
+          <div class="info-box">
+              <h5>Welcome to LinguistHubs, where language mastery begins. Immerse yourself in our diverse language courses, expertly designed to enhance your communication skills. Start your linguistic journey with us today!</h5>
+              <p class="stock">In stock</p>
+          </div>
+      </div>
+      <hr>
+      <div class="cost-box">
+          <div>
+              <p>Standard Package</p>
+              <p>499.00</p>
+          </div>
+          <div>
+              <p>Discount</p>
+              <p class="VAT">- 199.00</p>
+          </div>
+          <div>
+              <p>Total</p>
+              <p class="NOK">{{Total}}.00</p>
+          </div>
+          <div>
+          <p class="gift">Got a gift card or a promotional code?</p>
+          <input maxlength="7" class="gift-promo-input" [(ngModel)]="LinguisthubsPromoCode" (mouseleave)="getDiscount()">
+          <span class="applied" *ngIf="isAppliedPromo">Promo Applied</span>
+          </div>
+        </div>
+      <button class="Checkout-btn" (click)="createTransactionAndPlaceOrder()">Checkout</button>
+  </div>
+</body>  
+<app-footer></app-footer>

@@ -1,0 +1,145 @@
+<app-header>
+</app-header>
+<br/><br/>
+<div class="info-msg" *ngIf="isInfoError" >
+  <i class="fa fa-info-circle"></i>
+  Invalid Credentials try again.
+</div> 
+<div class="warning-msg" *ngIf="isWarnShow">
+  <i class="fa fa-warning"></i>
+  You are already exits in our database.
+</div>
+<div class="error-msg" *ngIf="isMsgFailShow">
+  <i class="fa fa-times-circle"></i>
+  Please Check The Credentials.
+</div>
+<div class="success-msg" *ngIf="isMsgSuccessShow">
+  <i class="fa fa-check"></i>
+  Password Updated
+</div>
+<div class="success-msg" *ngIf="isMsgSignupShow">
+  <i class="fa fa-check"></i>
+  Welcome to the family
+</div>
+<body>
+  <div class="login-wrap" *ngIf="isLoginMainForm_visible">
+    <div class="login-html">
+      <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+      <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+      <div class="login-form">
+        <!-- sign-in form started -->
+        <form (ngSubmit)="submit(myform.value)" #myform="ngForm">
+        <div class="sign-in-htm">
+          <div class="group">
+            <label for="email" class="label">Email</label>
+            <input id="email" name="email" type="text" #email="ngModel" class="input" ngModel>
+            <br/>
+            <span *ngIf="email.touched && email.pristine" style="color: rgba(212, 255, 0, 0.466);">*Email can't be blank</span>
+          </div>
+          <div class="group">
+            <label for="password" class="label">Password</label>
+            <input id="password" name="password" #password="ngModel" type="password" class="input" data-type="password" ngModel>
+            <br/>
+            <span *ngIf="password.touched && password.pristine" style="color:rgba(212, 255, 0, 0.466);">*Password can't be blank</span>
+          </div>
+          <div class="group">
+            <input id="check" type="checkbox" class="check" checked>
+            <label for="check"><span class="icon"></span> Keep me Signed in</label>
+          </div>
+          <div class="group">
+            <input type="submit" class="button" value="Sign In">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <a (click)="forgotPassword()" style="cursor: pointer;">Forgot Password?</a>
+          </div>
+        </div>
+      </form>
+
+
+        <!-- sign-in form ended -->
+
+        
+        <!-- signup started -->
+        <form (ngSubmit)="signUp(signup.value)" #signup="ngForm">
+        <div class="sign-up-htm">
+          <div class="group">
+            <label for="userName" class="label">Name</label>
+            <input id="userName" name="userName" minlength="5" maxlength="15" #userName="ngModel" type="text" class="input" ngModel required>
+            <br/>
+            <span *ngIf="userName.touched && userName.pristine" style="color:white;">*Username can't be blank</span>
+            <span *ngIf="userName.invalid && userName.dirty" style="color:white;">*Minimum length:5 and Maximum length:15</span>
+          </div>
+          <div class="group">
+            <label for="email" class="label">Email Address</label>
+            <input id="email" name="email" type="text" #mail="ngModel" class="input" ngModel required email>
+            <br/>
+            <span *ngIf="mail.touched && mail.pristine" style="color:white;">*Email can't be blank</span>
+            <span *ngIf="mail.invalid && mail.dirty" style="color:white;">*Email id is not valid</span>
+          </div>
+          <div class="group">
+            <label for="password" class="label">Password</label>
+            <input id="password" type="password" minlength="5" maxlength="15" name="password" #pass="ngModel" class="input" data-type="password" ngModel required>
+            <br/>
+            <span *ngIf="pass.touched && pass.pristine" style="color:white;">*Password can't be blank</span>
+            <span *ngIf="pass.invalid && pass.dirty" style="color:white;">*Minimum length:5 and Maximum length:15</span>
+          </div>
+          <!-- <div class="group">
+            <label  class="label">Repeat Password</label>
+            <input type="pass" class="input"  data-type="password" required>
+            <br/>
+            <span *ngIf="pass.touched && pass.pristine" style="color:rgba(212, 255, 0, 0.466);">*Password can't be blank</span>
+          </div> -->
+          <div class="group">
+            <input type="submit" [disabled]="buttonClicked" class="button" value="Sign Up">
+          </div>
+          <div class="hr"></div>
+          <div class="foot-lnk">
+            <label for="tab-1">Already Member?</label>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--Otp verification code started--> 
+</body>
+
+<!--starting spinning to load-->
+<div class="spinning-circle" *ngIf="isSpin">
+  <div class="spin-circle">
+  </div>  
+</div>  
+
+<div class="otp-box" *ngIf="isLoginVisible">
+  <span id="icon-mail">📩</span><span (click)="closePop()" class="close-popup">❌</span>
+    <p>One Time Password (OTP) has been sent via Email to {{mailSentTo}}</p>
+    <p>Enter the OTP below to verify it.</p>
+    <form (ngSubmit)="OTP(otp.value)" #otp="ngForm"> 
+    <input maxlength="1" class="input-otp" type="text" name="number1" ngModel>
+    <input maxlength="1" class="input-otp" type="text" name="number2" ngModel>
+    <input maxlength="1" class="input-otp" type="text" name="number3" ngModel>
+    <input maxlength="1" class="input-otp" type="text" name="number4" ngModel>
+    <input maxlength="1" class="input-otp" type="text" name="number5" ngModel>
+    <input maxlength="1" class="input-otp" type="text" name="number6" ngModel>
+    <span *ngIf="hideCountdown" class="otp-req">OTP expires in {{number}}</span>
+    <span class="otp-req">{{OTPMsg}}</span>
+    <span *ngIf="ResendBtn"><button class="otp-res-btn" (click)="resendOtp()">Resend OTP</button></span>
+    <button id="btn-otp" type="submit">Verify OTP</button>
+  </form>  
+</div>
+
+<div class="otp-box-2" *ngIf="isPasschange"><span (click)="closePop_Set()" style="cursor: pointer;" class="closePop_Set">❌</span>
+  <div class="set-password"><b>Set new password</b></div>
+  <h5>Here you can set new password for signing in to linguistgubs.Make sure you remember this password and keep it in a safe place.You can change the password at any time by visiting Password tab in the Setting menu.</h5>
+  <form #changePassword="ngForm"> 
+    <input class="input-otp-1" type="text" name="email" placeholder="Enter email" ngModel required>
+    <input class="input-otp-2" type={{showPassword_input}} name="password" placeholder="Enter new password" ngModel required><span class="input-show" style="color:blue;cursor: pointer;" *ngIf="changePassword.valid" (click)="PasswordChange(changePassword.value)">Generate Otp</span>
+    <!-- <span (click)="showPassword()" class="input-show" style="color:blue;cursor: pointer;">Show password</span> -->
+  </form>
+  <form #otpSubmit="ngForm">
+  <input class="input-otp-2" type="text" name="otp" placeholder="Enter otp" ngModel required>
+  <button [disabled]="otpSubmit.invalid" class="btn-topb2" (click)="verifyotp(otpSubmit.value)">Next</button>  
+  </form>
+</div>
+<app-footer></app-footer>

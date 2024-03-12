@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">  <!--placed flex to divide into an three-->
+    <!--block 1 started-->
+    <div class="block1">
+        <img id="img-user" src="assets/user.png" alt="user-img"> 
+        <h3 class="user-name">WELCOME LINGUISTIC</h3>
+    <div>
+        <ol *ngFor="let x of itemsDetails">
+            <li><a href="x.name">x.sno</a></li>
+        </ol>    
+    </div>        
+    </div>
+
+    <div class="block2">
+        <iframe width="870" height="515"
+        [src]="play_link">
+        </iframe>
+    <img class="btn-1" (click)="forword()" src="/assets/forword-btn.png" style="transform: rotate(180deg);">
+    <img class="btn-2" (click)="reverse()" src="/assets/forword-btn.png">
+    </div>
+
+    <div class="block3">
+        <img id="img-tutor" src="/assets/Mansi_AU-removebg-preview.png" alt="user-img"> 
+        <h3 class="tutor-name">Mansi Manot</h3> 
+        <p class="paragraph">              
+Meet Mansi Mondot, an accomplished English tutor pursuing an MCOM degree, dedicated to empowering high school-level learners. With tailored lessons and interactive teaching methods, Mansi creates a dynamic learning environment that enhances critical thinking and creativity. Choose Mansi for a transformative learning journey, unlocking your language potential and building essential skills for success in a globalized world. Embark on this exciting adventure with Mansi, and your journey to success begins now!       
+        </p>
+        <p><img class="bl-3-img" src="/assets/Flag_of_India.svg.png"></p>
+        <p class="paragraph2">
+            "The beauty of English lies not just in its syntax but in the intricate dance of words, waltzing to compose the poetry of human connection"
+        </p>    
+        <p class="paragraph3">
+        - Mansi
+        </p>    
+    </div>
+</div>    
+<app-footer></app-footer>

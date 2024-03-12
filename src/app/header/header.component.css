@@ -1,0 +1,87 @@
+li,ul{
+    display: inline-block;
+    padding-right:15px;
+    color: white;
+}
+div.menu{
+    text-align: center;
+    margin-left:50px;
+}
+#logo-name{
+    padding-right:500px;
+    font-size:130%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#body{
+    background-color: rgb(102, 11, 126);
+    padding-bottom:20px;
+}
+.img-flag{
+    width:40px;
+    position: relative;
+}
+.bar-nav{
+    text-align: center;
+    padding-top:25px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.bar-menu{
+    background-color: rgba(172, 6, 237, 0.075);
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    padding-right:150px;
+    padding-left:150px;
+    border-radius:20px;
+}
+.lang-name{
+    padding-left:15px;
+    padding-right:15px;
+    font-size:120%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-top:3px;
+    color: white;
+    text-decoration: none;
+}
+.flag-menu{
+    padding-right:20px;
+    padding-left:20px;
+}
+.flag-menu{
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.flag-menu:hover{
+    font-size:150%;
+    opacity:1;
+}
+.contact-form{
+    text-decoration-style: none;
+}
+.bar-header li a{
+    color:white;
+    text-decoration-line: none;
+}
+.bar-header li a:hover{
+    color: blueviolet;
+}
+.info-msg {
+    color: #059;
+    background-color: #BEF;
+    float: right;
+    width: 20%;
+    padding: 10px;
+    text-align:center;
+    animation: hide 1s linear 5s 1 forwards;
+    margin-right:10px;
+}
+
+@keyframes hide {
+    to {
+        opacity: 0;
+    }
+}
+

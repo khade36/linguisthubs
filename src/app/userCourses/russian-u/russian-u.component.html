@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container">  <!--placed flex to divide into an three-->
+    <!--block 1 started-->
+    <div class="block1">
+        <img id="img-user" src="assets/user.png" alt="user-img"> 
+        <h3 class="user-name">WELCOME LINGUISTIC</h3>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="courseName"> 
+            <th style="background-color: rgb(148, 0, 254);color:rgb(251, 251, 251);" class="cell-color" mat-header-cell *matHeaderCellDef>COURSE NAME : RUSSIAN FIRST</th>
+            <td class="cell-color" mat-cell *matCellDef="let element">{{element.topic_name}}<button class="btn-play" (click)="getLink(element.youtube_link)">Play▶️</button></td>
+            <!-- <td class="cell-color" mat-cell *matCellDef="let element"><button (click)="getLink(element.youtube_link)"></button>{{element.youtube_link}}</td> -->
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+        <mat-paginator hidePageSize [pageSizeOptions]="[8,16,24]" showFirstLastButtons></mat-paginator>
+    </div>
+    <div class="block2"><iframe width="870" height="700"
+        [src]='transform(youtube_playList+"?autoplay=1&controls=1&showinfo=0&modestbranding=0&rel=0")'>
+        </iframe>
+    </div>
+
+    <div class="block3">
+        <img id="img-tutor" src="/assets/Anastasiia.png" alt="user-img"> 
+        <h3 class="tutor-name">ANASTASIA</h3> 
+        <p class="paragraph">         
+            Hello, I'm Anastasia, a dedicated language teacher with 9+ years of experience in foreign languages and Russian instruction. I've worked with students aged 5 to 60, viewing teaching not just as a job but a calling, approached with genuine love and unwavering professionalism. Join me on an educational adventure crafted with passion and expertise.
+        </p>
+        <p><img class="bl-3-img" src="/assets/Flag_of_Russia.svg.png"></p>
+        <p class="paragraph2">
+            “Discover the enchanting symphony of the Cyrillic script as you immerse yourself in the profound beauty of Russian. Each word resonates like a timeless melody, weaving tales of history, culture, and an unparalleled linguistic richness that transcends borders and captivates the soul”
+        </p>    
+        <p class="paragraph3">
+        - Anastasia
+        </p>    
+    </div>
+</div>    
+<app-footer></app-footer>

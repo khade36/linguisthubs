@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="bg-colour">
+<div class="text">
+<h1>    
+Contact
+</h1>
+Check the FAQs, otherwise get in touch.
+<br/><br/>
+We'll get back to you in an hour or so, unless we're sleeping.
+<br/>
+Sometimes that happens.
+</div>
+
+<form (ngSubmit)="saveContact(myform.value)" #myform="ngForm">
+<div class="background">
+    <div class="container">
+      <div class="screen">
+        <div class="screen-header">
+          <div class="screen-header-left">
+            <div class="screen-header-button close"></div>
+            <div class="screen-header-button maximize"></div>
+            <div class="screen-header-button minimize"></div>
+          </div>
+          <div class="screen-header-right">
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+            <div class="screen-header-ellipsis"></div>
+          </div>
+        </div>
+        <div class="screen-body">
+          <div class="screen-body-item left">
+            <div class="app-title">
+              <span>CONTACT</span>
+              <span>US</span>
+            </div>
+            <div class="app-contact">CONTACT INFO : info@linguisthubs.com</div>
+          </div>
+          <div class="screen-body-item">
+            <div class="app-form">
+              <div class="app-form-group">
+                <input class="app-form-control" placeholder="NAME" name="name" ngModel>
+              </div>
+              <div class="app-form-group">
+                <input class="app-form-control" placeholder="EMAIL" name="email" ngModel>
+              </div>
+              <div class="app-form-group">
+                <input class="app-form-control" placeholder="CONTACT NO" name="contact" ngModel>
+              </div>
+              <div class="app-form-group message">
+                <input class="app-form-control" placeholder="MESSAGE" name="message" ngModel>
+              </div>
+              <div class="app-form-group buttons">
+                <button class="app-form-button">CANCEL</button>
+                <button class="app-form-button">SEND</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+  </div>
+  <app-footer></app-footer>
+  
